@@ -11,6 +11,5 @@ export async function  shareMeals(formData:any) {
         creator_email: formData.get('email'),
     }
 
-    // await saveMeal(meal)
     redirect('/meals')
 }
