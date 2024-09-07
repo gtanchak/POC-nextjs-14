@@ -12,9 +12,9 @@ type ImagePickerProps = {
 export default function ImagePicker({ label, name }: ImagePickerProps) {
   const imageRef = useRef<HTMLImageElement>(null);
   const [pickedImage, setPickedImage] = useState();
-  // function handleImageClick() {
-  //     imageRef.current.click()
-  // }
+  function handleImageClick() {
+    imageRef.current.click();
+  }
 
   function handleImageChange(event: any) {
     const file = event.target.files[0];
