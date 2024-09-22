@@ -1,0 +1,18 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerBox {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

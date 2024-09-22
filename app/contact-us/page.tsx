@@ -1,14 +1,30 @@
 "use client";
+import { useEffect, useRef } from "react";
+import contact from "./contct.module.css";
 
-import useLocalStorageState from "@/hooks/useLocalStorageState";
+import VanillaTilt from "vanilla-tilt";
 
 export default function ContactUsPage() {
-  const key = "fx";
-  const [state, setState] = useLocalStorageState(key);
+  const boxRef = useRef();
+
+  useEffect(() => {
+    const tileNode = boxRef.current;
+    VanillaTilt.init(tileNode, {
+      max: 25,
+      speed: 400,
+    });
+    return function cleanup() {
+      tileNode.vanillaTilt.destroy();
+    };
+  });
+
   return (
     <main>
-      <span>{state}</span>
-      <input onChange={(e) => setState(e.target.value)} />
+      <div ref={boxRef} className={contact.box}>
+        <div className={contact.innerBox}>
+          <p>Vanila</p>
+        </div>
+      </div>
     </main>
   );
 }
